@@ -3,7 +3,7 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
     selector: 'event-thumbnail',
-    template: `<div class="well honeywell thumbnail">
+    template: `<div [routerLink] = "['/events', event.id]" class="well honeywell thumbnail">
     <h2> Name: {{event.name}} </h2>
     <div> Date: {{event.date}} </div>
     <!--<div [ngClass]="{green: event?.time === '8:00 am', orange: event?.time === '10:00 am'}" -->

@@ -6,6 +6,10 @@ export class EventsService {
     getEvents() {
         return EVENTS;
     }
+
+    getEvent(id: number) {
+        return EVENTS.find(event => event.id === id);
+    }
 }
 
 const EVENTS = [
@@ -28,8 +32,8 @@ const EVENTS = [
           presenter: "Peter Bacon Darwin",
           duration: 1,
           level: "Intermediate",
-          abstract: `Learn all about the new pipes in Angular 4, both 
-          how to write them, and how to get the new AI CLI to write 
+          abstract: `Learn all about the new pipes in Angular 4, both
+          how to write them, and how to get the new AI CLI to write
           them for you. Given by the famous PBD, president of Angular 
           University (formerly Oxford University)`,
           voters: ['bradgreen', 'igorminar', 'martinfowler']
