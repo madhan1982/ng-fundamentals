@@ -12,6 +12,7 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { CreateEventComponent } from './events/create-event.component';
 import { Error404Component } from './errors/404.component';
+import { EventRouteActivator } from './events/event-route-activator.service';
 
 @NgModule({
   imports: [
@@ -28,7 +29,23 @@ import { Error404Component } from './errors/404.component';
     NavBarComponent,
   ],
 
-  providers: [EventsService, ToastrService],
+  providers: [
+    EventsService, 
+    ToastrService,
+    EventRouteActivator,
+    {
+      provide: 'canDeactiveCreateEvent',
+      useValue: checkDirtyStage
+    }
+  ],
   bootstrap: [EventsAppComponent]
 })
 export class AppModule { }
+
+export function checkDirtyStage(component: CreateEventComponent) {
+  if(component.isDirty){
+    return window.confirm('Are you sure yuou want to cancel this? ');
+    return true;
+  }
+
+}
