@@ -30,7 +30,7 @@ import { EventRouteActivator } from './events/event-route-activator.service';
   ],
 
   providers: [
-    EventsService, 
+    EventsService,
     ToastrService,
     EventRouteActivator,
     {
@@ -43,7 +43,7 @@ import { EventRouteActivator } from './events/event-route-activator.service';
 export class AppModule { }
 
 export function checkDirtyStage(component: CreateEventComponent) {
-  if(component.isDirty){
+  if (component.isDirty) {
     return window.confirm('Are you sure yuou want to cancel this? ');
     return true;
   }

@@ -1,6 +1,6 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 import { EventsService} from '../shared/event.service';
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     templateUrl: './event-details.component.html',
@@ -16,6 +16,7 @@ export class EventDetailsComponent {
 
     }
 
+    // tslint:disable-next-line:use-life-cycle-interface
     ngOnInit() {
         this.event = this.eventService.getEvent(+this.route.snapshot.params['id']);
     }

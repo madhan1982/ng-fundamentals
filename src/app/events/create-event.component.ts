@@ -1,5 +1,6 @@
-import { Component } from "@angular/core";
-import { Router } from "@angular/router";
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
     template: `
@@ -15,7 +16,7 @@ import { Router } from "@angular/router";
     `
 })
 export class CreateEventComponent {
-    isDirty:boolean = true;
+    isDirty = true;
     constructor(private router: Router) {
 
     }

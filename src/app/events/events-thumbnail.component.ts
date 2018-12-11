@@ -1,7 +1,8 @@
-import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 
 @Component({
+    // tslint:disable-next-line:component-selector
     selector: 'event-thumbnail',
     template: `<div [routerLink] = "['/events', event.id]" class="well honeywell thumbnail">
     <h2> Name: {{event.name}} </h2>
