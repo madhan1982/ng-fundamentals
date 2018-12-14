@@ -15,7 +15,7 @@ export class EventsService {
 const EVENTS = [
     {
       id: 1,
-      name: 'Angular Connect',
+      name: 'Angular Connect1',
       date: '9/26/2036',
       time: '10:00 am',
       price: 599.99,
