@@ -13,6 +13,7 @@ import { appRoutes } from './routes';
 import { CreateEventComponent } from './events/create-event.component';
 import { Error404Component } from './errors/404.component';
 import { EventRouteActivator } from './events/event-route-activator.service';
+import { EventListResolver } from './events/event-list-resolver.service';
 
 @NgModule({
   imports: [
@@ -27,11 +28,13 @@ import { EventRouteActivator } from './events/event-route-activator.service';
     CreateEventComponent,
     Error404Component,
     NavBarComponent,
+    
   ],
 
   providers: [
     EventsService,
     ToastrService,
+    EventListResolver,
     EventRouteActivator,
     {
       provide: 'canDeactiveCreateEvent',

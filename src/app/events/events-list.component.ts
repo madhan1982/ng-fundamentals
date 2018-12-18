@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { EventsService } from './shared/event.service';
 import { toBase64String } from '@angular/compiler/src/output/source_map';
 import { ToastrService } from './common/toastr.service';
+import { ActivatedRoute } from '@angular/router';
+import { IEvent } from './shared/event.model';
 
 
 @Component ({
@@ -20,13 +22,15 @@ template: `
 })
 
 export class EventsListComponent {
-    events: any[];
-        constructor(private eventService: EventsService, private toastr: ToastrService) {
+    events: IEvent[];
+        constructor(private eventService: EventsService, private toastr: ToastrService, private route: ActivatedRoute) {
     }
 
 
     ngOnInit() {
-        this.events = this.eventService.getEvents();
+        this.events = this.route.snapshot.data['events'];
+        //this.eventService.getEvents().subscribe(events => {this.events = events})
+       // this.events = this.eventService.getEvents();
     }
 
     handleEventClicked(data) {
